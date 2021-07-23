@@ -5,11 +5,14 @@ public class categorias {
     private int idCategoria;
     private String clasificacion;
     private String nombre;
+    private int idSubCategoria;
 
-    public categorias(int idCategoria, String clasificacion, String nombre) {
+    public categorias(int idCategoria, String clasificacion, String nombre, int idSubCategoria) {
         this.idCategoria = idCategoria;
         this.clasificacion = clasificacion;
         this.nombre = nombre;
+        this.idSubCategoria= idSubCategoria;
+
     }
 
     public int getIdCategoria() {
@@ -34,5 +37,13 @@ public class categorias {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public int getIdSubCategoria() {
+        return idSubCategoria;
+    }
+
+    public void setIdSubCategoria(int idSubCategoria) {
+        this.idSubCategoria = idSubCategoria;
     }
 }

@@ -6,11 +6,16 @@ public class user {
     private String usuario;
     private String contrasenia;
 
+
+    public user (){}
+
     public user(int idUsuario, String usuario, String contrasenia) {
         this.idUsuario = idUsuario;
         this.usuario = usuario;
         this.contrasenia = contrasenia;
     }
+
+
 
     public int getIdUsuario() {
         return idUsuario;
