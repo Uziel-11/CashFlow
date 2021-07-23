@@ -1,5 +1,6 @@
 package CashFlow.Controller;
 
+import CashFlow.Main;
 import CashFlow.Model.categorias;
 import CashFlow.Model.categoriasDAO;
 import javafx.collections.FXCollections;
@@ -39,6 +40,11 @@ public class CategoriasController implements Initializable {
         tablaCategorias.setItems(list);
 
 
+    }
+
+    @FXML
+    void regresarMenu(){
+        Main.setFXML("Menu","Menu");
     }
 
     @Override
