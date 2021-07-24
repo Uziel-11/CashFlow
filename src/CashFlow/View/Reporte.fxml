@@ -2,9 +2,13 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.ReporteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.ReporteController">
    <children>
-      <Button layoutX="58.0" layoutY="339.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" text="Regresar" />
+      <Button layoutX="64.0" layoutY="633.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" prefHeight="46.0" prefWidth="110.0" style="-fx-background-color: #1D5B98;" text="Regresar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>

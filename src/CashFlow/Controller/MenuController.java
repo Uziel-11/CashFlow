@@ -3,9 +3,18 @@ package CashFlow.Controller;
 
 import CashFlow.Main;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-public class MenuController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MenuController implements Initializable {
+
+    @FXML
+    ImageView logo;
 
     @FXML
     void verCategorias() {
@@ -27,4 +36,13 @@ public class MenuController {
         Main.setFXML("Reporte", "Reporte");
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image image = new Image(getClass().getResourceAsStream("../Recursos/logo.jpeg"));
+        logo.setImage(image);
+    }
+
+    public void salir(){
+        System.exit(1);
+    }
 }

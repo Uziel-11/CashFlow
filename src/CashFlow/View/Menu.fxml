@@ -6,37 +6,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.MenuController">
    <children>
-      <Label layoutY="-2.0" prefHeight="58.0" prefWidth="600.0" style="-fx-background-color: #1D5B98;" text="                                     Menu" textFill="WHITE">
+      <Label layoutY="-2.0" prefHeight="97.0" prefWidth="1024.0" style="-fx-background-color: #1D5B98;" text="                                                         Menu" textFill="WHITE">
          <font>
-            <Font size="26.0" />
+            <Font size="30.0" />
          </font>
       </Label>
-      <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="48.0" layoutY="160.0" onMouseClicked="#gestionDinero" prefHeight="39.0" prefWidth="530.0" style="-fx-background-color: #878787;" text="                                            Gestion de Dinero" textFill="WHITE">
+      <ImageView fx:id="logo" fitHeight="91.0" fitWidth="97.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="75.0" layoutY="279.0" onMouseClicked="#gestionDinero" prefHeight="60.0" prefWidth="873.0" style="-fx-background-color: #878787;" text="                                                                Gestion de Dinero" textFill="WHITE">
          <font>
-            <Font size="16.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="48.0" layoutY="213.0" onMouseClicked="#flujoDinero" prefHeight="39.0" prefWidth="530.0" style="-fx-background-color: #878787;" text="                                            Flujo de Dinero" textFill="WHITE">
+      <Label layoutX="75.0" layoutY="360.0" onMouseClicked="#flujoDinero" prefHeight="60.0" prefWidth="873.0" style="-fx-background-color: #878787;" text="                                                                  Flujo de Dinero" textFill="WHITE">
          <font>
-            <Font size="16.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="48.0" layoutY="263.0" onMouseClicked="#reporte" prefHeight="39.0" prefWidth="530.0" style="-fx-background-color: #878787;" text="                                                      Reporte" textFill="WHITE">
+      <Label layoutX="75.0" layoutY="449.0" onMouseClicked="#reporte" prefHeight="60.0" prefWidth="873.0" style="-fx-background-color: #878787;" text="                                                                        Reporte" textFill="WHITE">
          <font>
-            <Font size="16.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="22.0" layoutY="344.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="68.0" style="-fx-background-color: #1D5B98;" text="Salir" textFill="WHITE">
+      <Button layoutX="48.0" layoutY="650.0" mnemonicParsing="false" onAction="#salir" prefHeight="39.0" prefWidth="114.0" style="-fx-background-color: #1D5B98;" text="Salir" textFill="WHITE">
          <font>
-            <Font size="13.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="48.0" layoutY="109.0" onMouseClicked="#verCategorias" prefHeight="39.0" prefWidth="530.0" style="-fx-background-color: #878787;" text="                                           Gestion de Categorias" textFill="WHITE">
+      <Label layoutX="75.0" layoutY="180.0" onMouseClicked="#verCategorias" prefHeight="60.0" prefWidth="873.0" style="-fx-background-color: #878787;" text="                                                               Gestion de Categorias" textFill="WHITE">
          <font>
-            <Font size="16.0" />
+            <Font size="20.0" />
          </font>
       </Label>
    </children>

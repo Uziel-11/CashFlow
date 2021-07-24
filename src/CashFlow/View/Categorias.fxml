@@ -5,19 +5,23 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.CategoriasController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.CategoriasController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="tablaCategorias" layoutX="58.0" layoutY="30.0" prefHeight="200.0" prefWidth="393.0">
+            <TableView fx:id="tablaCategorias" layoutX="58.0" layoutY="160.0" prefHeight="334.0" prefWidth="394.0">
               <columns>
                 <TableColumn fx:id="clasificacionCat" prefWidth="119.20001220703125" text="Clasificacion" />
                 <TableColumn fx:id="nombreCat" prefWidth="132.79998779296875" text="categoria" />
                   <TableColumn fx:id="nombreSubCat" prefWidth="143.20001220703125" text="subCategoria" />
               </columns>
             </TableView>
-            <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" text="Regresar" />
+            <Button layoutX="58.0" layoutY="640.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" prefHeight="39.0" prefWidth="103.0" style="-fx-background-color: #1D5B98;" text="Regresar" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
          </children>
       </AnchorPane>
    </center>
