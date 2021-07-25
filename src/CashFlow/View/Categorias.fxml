@@ -1,28 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.CategoriasController">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <TableView fx:id="tablaCategorias" layoutX="58.0" layoutY="160.0" prefHeight="334.0" prefWidth="394.0">
-              <columns>
-                <TableColumn fx:id="clasificacionCat" prefWidth="119.20001220703125" text="Clasificacion" />
-                <TableColumn fx:id="nombreCat" prefWidth="132.79998779296875" text="categoria" />
-                  <TableColumn fx:id="nombreSubCat" prefWidth="143.20001220703125" text="subCategoria" />
-              </columns>
-            </TableView>
-            <Button layoutX="58.0" layoutY="640.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" prefHeight="39.0" prefWidth="103.0" style="-fx-background-color: #1D5B98;" text="Regresar" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font></Button>
-         </children>
-      </AnchorPane>
-   </center>
-</BorderPane>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="931.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="tablaCategorias" layoutX="25.0" layoutY="126.0" prefHeight="334.0" prefWidth="469.0">
+         <columns>
+            <TableColumn fx:id="clasificacionCat" prefWidth="147.33333778381348" text="Clasificacion" />
+            <TableColumn fx:id="nombreCat" prefWidth="176.6666717529297" text="categoria" />
+            <TableColumn fx:id="nombreSubCat" prefWidth="144.6666259765625" text="subCategoria" />
+         </columns>
+      </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1d5b98" height="50.0" stroke="#1d5b98" strokeType="INSIDE" width="931.0" />
+      <Label layoutX="370.0" layoutY="10.0" text="Gestion de categorias" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="76.0" text="Lista de categorias">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="561.0" layoutY="148.0" text="Clasificacion" />
+      <Label layoutX="561.0" layoutY="192.0" text="Categoria" />
+      <Label layoutX="561.0" layoutY="238.0" text="Sub-Categoria" />
+      <ComboBox fx:id="comboxClasificacion" layoutX="666.0" layoutY="144.0" prefHeight="25.0" prefWidth="185.0" />
+      <TextField fx:id="idCategoria" layoutX="666.0" layoutY="188.0" prefHeight="25.0" prefWidth="247.0" />
+      <TextField fx:id="idSubCategoria" layoutX="666.0" layoutY="234.0" prefHeight="25.0" prefWidth="247.0" />
+      <Button layoutX="708.0" layoutY="301.0" mnemonicParsing="false" onMouseClicked="#GuardarOnMouseClicked" style="-fx-background-color: #1d5b98;" text="Guardar / Editar" textFill="WHITE" />
+   </children>
+</AnchorPane>
