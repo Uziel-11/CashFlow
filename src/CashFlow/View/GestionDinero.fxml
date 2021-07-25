@@ -1,14 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.GestionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.GestionController">
    <children>
-      <Button layoutX="41.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #1D5B98;" text="Regresar" textFill="WHITE">
+      <Button layoutX="74.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #1D5B98;" text="Regresar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1d5b98" height="37.0" stroke="#1d5b98" strokeType="INSIDE" width="1024.0" />
+      <Label layoutX="451.0" layoutY="4.0" text="Gestion de dinero" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="837.0" layoutY="91.0" text="Bancos">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="108.0" layoutY="87.0" text="Cuentas por cobrar">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="458.0" layoutY="89.0" text="Cuentas por pagar">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="145.0" text="No. Semana" />
+      <Label layoutX="58.0" layoutY="182.0" text="Razon Social" />
+      <Label layoutX="60.0" layoutY="245.0" text="Monto" />
+      <TextField fx:id="idNoSemanaCobrar" layoutX="136.0" layoutY="141.0" prefHeight="25.0" prefWidth="50.0" />
+      <TextField fx:id="idRazonCobro" layoutX="58.0" layoutY="210.0" prefHeight="25.0" prefWidth="254.0" />
+      <TextField fx:id="idMontoCobro" layoutX="59.0" layoutY="271.0" prefHeight="25.0" prefWidth="254.0" />
+      <Button layoutX="216.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#GuardarCobroOnMouseClicked" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #1D5B98;" text="Guardar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="406.0" layoutY="145.0" text="No. Semana" />
+      <TextField fx:id="idNoSemanaPagar" layoutX="485.0" layoutY="141.0" prefHeight="25.0" prefWidth="50.0" />
+      <Label layoutX="404.0" layoutY="183.0" text="Razon Social" />
+      <TextField fx:id="idRazonPagar" layoutX="403.0" layoutY="210.0" prefHeight="25.0" prefWidth="254.0" />
+      <Label layoutX="404.0" layoutY="245.0" text="Monto" />
+      <TextField fx:id="idMontoPagar" layoutX="403.0" layoutY="271.0" prefHeight="25.0" prefWidth="254.0" />
+      <Button layoutX="559.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#GuardarPagoOnMouseClicked" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #1D5B98;" text="Guardar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="736.0" layoutY="145.0" text="No. Semana" />
+      <TextField fx:id="idNoSemanaBanco" layoutX="813.0" layoutY="141.0" prefHeight="25.0" prefWidth="50.0" />
+      <Label layoutX="734.0" layoutY="183.0" text="Razon Social" />
+      <TextField fx:id="idRazonBanco" layoutX="732.0" layoutY="210.0" prefHeight="25.0" prefWidth="254.0" />
+      <Label layoutX="733.0" layoutY="245.0" text="Monto" />
+      <TextField fx:id="idMontoBanco" layoutX="733.0" layoutY="271.0" prefHeight="25.0" prefWidth="254.0" />
+      <Button layoutX="889.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#GuardarBancoOnMouseClicked" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #1D5B98;" text="Guardar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
