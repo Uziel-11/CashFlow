@@ -29,7 +29,7 @@ public class RootController implements Initializable {
 
     @FXML
     void ingresar(MouseEvent event) {
-        String nombrepa= userName.getText();
+        String nombrepa = userName.getText();
         String passw= password.getText();
 
         user usuario = new user();

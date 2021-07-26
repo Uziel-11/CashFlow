@@ -63,20 +63,22 @@ public class CategoriasController implements Initializable {
             cat = new categorias();
             subCat = new subCategoria();
 
-        subCat.setNombre(nombSubCat);
-        daoSubCat.insert(subCat);
-        if(comboxClasificacion != null){
-            subCat = new subCategoria();
-            subCat = daoSubCat.getSubCat(nombSubCat);
-            cat.setClasificacion(comboxClasificacion.getValue());
-            cat.setNombre(nomCat);
-            cat.setIdSubCategoria(subCat);
-            daoCat.insert(cat);
+            subCat.setNombre(nombSubCat);
+            daoSubCat.insert(subCat);
+            if(comboxClasificacion != null){
+                subCat = new subCategoria();
+                subCat = daoSubCat.getSubCat(nombSubCat);
+                cat.setClasificacion(comboxClasificacion.getValue());
+                cat.setNombre(nomCat);
+                cat.setIdSubCategoria(subCat);
+                daoCat.insert(cat);
+
+            }
 
         }
-
-        }
-
+        idCategoria.clear();
+        idSubCategoria.clear();
+        llenarTabla();
 
     }
 
@@ -100,6 +102,6 @@ public class CategoriasController implements Initializable {
     public void initialize(URL arg0, ResourceBundle arg1) {
  comboxClasificacion.setItems(listaClasificacion);
         llenarTabla();
-            }
+    }
 
 }

@@ -10,13 +10,13 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.FlujoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.FlujoController">
    <children>
       <Button layoutX="45.0" layoutY="681.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" prefHeight="39.0" prefWidth="94.0" style="-fx-background-color: #1D5B98;" text="Regresar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <TableView fx:id="tablaDatosFlujoDinero" layoutX="24.0" layoutY="59.0" prefHeight="393.0" prefWidth="734.0">
+      <TableView fx:id="tablaFlujo" layoutX="24.0" layoutY="59.0" prefHeight="393.0" prefWidth="734.0">
         <columns>
           <TableColumn fx:id="fechaColum" prefWidth="99.33333969116211" text="Fecha" />
           <TableColumn fx:id="descripcionColum" prefWidth="369.99998474121094" text="Descripcion" />
@@ -31,17 +31,16 @@
          </font>
       </Label>
       <Label layoutX="234.0" layoutY="563.0" text="Categoria" />
-      <ComboBox fx:id="categoriasOpciones" layoutX="311.0" layoutY="559.0" prefWidth="150.0" />
+      <ComboBox fx:id="categorias" layoutX="311.0" layoutY="559.0" prefWidth="150.0" />
       <Label layoutX="236.0" layoutY="499.0" text="Selecciona el tipo de flujo a registrar" />
       <Label layoutX="236.0" layoutY="607.0" text="Descripcion" />
-      <TextField fx:id="textFieldDescripcion" layoutX="311.0" layoutY="604.0" prefHeight="25.0" prefWidth="469.0" />
-      <TextField fx:id="textFieldCantidad" layoutX="311.0" layoutY="646.0" onMouseClicked="#GuardarOnMouseClicked" />
+      <TextField fx:id="descripcion" layoutX="311.0" layoutY="604.0" prefHeight="25.0" prefWidth="469.0" />
+      <TextField fx:id="cantidad" layoutX="311.0" layoutY="646.0" />
       <Label layoutX="234.0" layoutY="650.0" text="Cantidad" />
-      <Button layoutX="614.0" layoutY="689.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" prefHeight="39.0" prefWidth="94.0" style="-fx-background-color: #1D5B98;" text="Guardar" textFill="WHITE">
+      <Button layoutX="614.0" layoutY="689.0" mnemonicParsing="false" onMouseClicked="#guardar" prefHeight="39.0" prefWidth="94.0" style="-fx-background-color: #1D5B98;" text="Guardar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <ComboBox fx:id="tipoFlujo" layoutX="236.0" layoutY="524.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

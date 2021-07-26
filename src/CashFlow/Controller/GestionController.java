@@ -36,22 +36,22 @@ public class GestionController {
     private TextField idMontoBanco;
 
     @FXML
-    void GuardarBancoOnMouseClicked(MouseEvent event) {
+    void GuardarBanco() {
 
     }
 
     @FXML
-    void GuardarCobroOnMouseClicked(MouseEvent event) {
+    void GuardarCobro() {
 
     }
 
     @FXML
-    void GuardarPagoOnMouseClicked(MouseEvent event) {
+    void GuardarPago() {
 
     }
 
     @FXML
-    void regresarMenu(MouseEvent event) {
+    void regresarMenu() {
         Main.setFXML("Menu", "Menu");
     }
 
