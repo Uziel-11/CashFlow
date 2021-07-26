@@ -13,7 +13,8 @@ import java.util.List;
 public class categoriasDAO {
     private Connection connection = null;
     private final int ACCEPT = 1;
-
+    subCategoriaDao dao;
+    subCategoria idSubCategoria;
 public categoriasDAO(){
     AdapterMySQL conector = new AdapterMySQL();
     connection = conector.getConnection();
@@ -32,8 +33,9 @@ public categoriasDAO(){
                     int idCategoria = results.getInt(1);
                     String clasificacion = results.getString(2);
                     String nombre = results.getString(3);
-                    int idSubCategoria = results.getInt(4);
-
+                    int valorSubcategoria = results.getInt(4);
+                    dao= new subCategoriaDao();
+                    idSubCategoria = dao.getSubCategorias(valorSubcategoria);
                     categorias cat = new categorias(idCategoria, clasificacion, nombre, idSubCategoria);
                     categorias.add(cat);
                 }
@@ -44,6 +46,26 @@ public categoriasDAO(){
         }
         return categorias;
     }
+    public boolean insert(categorias cat) {
+        boolean resultado = false;
+        if (connection != null) {
 
+            String sql = "insert into categoria values(?,?,?,?)";
+
+            try {
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setInt(1, cat.getIdCategoria());
+                statement.setString(2,cat.getClasificacion());
+                statement.setString(3, cat.getNombre());
+                statement.setInt(4, cat.getIdSubCategoria().getIdSubCategoria());
+                if (statement.executeUpdate() == ACCEPT)
+                    resultado = true;
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        return resultado;
+    }
 
 }

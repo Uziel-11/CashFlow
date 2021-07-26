@@ -10,8 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="931.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.CategoriasController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="931.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.CategoriasController">
    <children>
       <TableView fx:id="tablaCategorias" layoutX="25.0" layoutY="126.0" prefHeight="334.0" prefWidth="469.0">
          <columns>
@@ -37,7 +36,7 @@
       <ComboBox fx:id="comboxClasificacion" layoutX="666.0" layoutY="144.0" prefHeight="25.0" prefWidth="185.0" />
       <TextField fx:id="idCategoria" layoutX="666.0" layoutY="188.0" prefHeight="25.0" prefWidth="247.0" />
       <TextField fx:id="idSubCategoria" layoutX="666.0" layoutY="234.0" prefHeight="25.0" prefWidth="247.0" />
-      <Button layoutX="708.0" layoutY="301.0" mnemonicParsing="false" onMouseClicked="#GuardarOnMouseClicked" style="-fx-background-color: #1d5b98;" text="Guardar / Editar" textFill="WHITE" />
-      <Button layoutX="58.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#RegresarGuardarOnMouseClickedOnMouseClicked" style="-fx-background-color: #1d5b98;" text="Regresar" textFill="WHITE" />
+      <Button layoutX="708.0" layoutY="301.0" mnemonicParsing="false" onMouseClicked="#guardarOnMouseClicked" style="-fx-background-color: #1d5b98;" text="Guardar / Editar" textFill="WHITE" />
+      <Button layoutX="58.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" style="-fx-background-color: #1d5b98;" text="Regresar" textFill="WHITE" />
    </children>
 </AnchorPane>
