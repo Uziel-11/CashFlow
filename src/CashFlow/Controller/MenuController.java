@@ -23,7 +23,7 @@ public class MenuController implements Initializable {
 
     @FXML
     void gestionDinero(){
-        Main.setFXML("GestionDinero", "Gestion de Dinero");
+        Main.setFXML("Gestion", "Gestion de Dinero");
     }
 
     @FXML

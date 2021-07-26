@@ -37,31 +37,31 @@
       <Label layoutX="60.0" layoutY="145.0" text="No. Semana" />
       <Label layoutX="58.0" layoutY="182.0" text="Razon Social" />
       <Label layoutX="60.0" layoutY="245.0" text="Monto" />
-      <TextField fx:id="idNoSemanaCobrar" layoutX="136.0" layoutY="141.0" prefHeight="25.0" prefWidth="50.0" />
-      <TextField fx:id="idRazonCobro" layoutX="58.0" layoutY="210.0" prefHeight="25.0" prefWidth="254.0" />
-      <TextField fx:id="idMontoCobro" layoutX="59.0" layoutY="271.0" prefHeight="25.0" prefWidth="254.0" />
+      <TextField fx:id="NoSemanaCobrar" layoutX="136.0" layoutY="141.0" prefHeight="25.0" prefWidth="50.0" />
+      <TextField fx:id="RazonCobro" layoutX="58.0" layoutY="210.0" prefHeight="25.0" prefWidth="254.0" />
+      <TextField fx:id="MontoCobro" layoutX="59.0" layoutY="271.0" prefHeight="25.0" prefWidth="254.0" />
       <Button layoutX="216.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#GuardarCobro" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #1D5B98;" text="Guardar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
       <Label layoutX="406.0" layoutY="145.0" text="No. Semana" />
-      <TextField fx:id="idNoSemanaPagar" layoutX="485.0" layoutY="141.0" prefHeight="25.0" prefWidth="50.0" />
+      <TextField fx:id="NoSemanaPagar" layoutX="485.0" layoutY="141.0" prefHeight="25.0" prefWidth="50.0" />
       <Label layoutX="404.0" layoutY="183.0" text="Razon Social" />
-      <TextField fx:id="idRazonPagar" layoutX="403.0" layoutY="210.0" prefHeight="25.0" prefWidth="254.0" />
+      <TextField fx:id="RazonPagar" layoutX="403.0" layoutY="210.0" prefHeight="25.0" prefWidth="254.0" />
       <Label layoutX="404.0" layoutY="245.0" text="Monto" />
-      <TextField fx:id="idMontoPagar" layoutX="403.0" layoutY="271.0" prefHeight="25.0" prefWidth="254.0" />
+      <TextField fx:id="MontoPagar" layoutX="403.0" layoutY="271.0" prefHeight="25.0" prefWidth="254.0" />
       <Button layoutX="559.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#GuardarPago" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #1D5B98;" text="Guardar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
       <Label layoutX="736.0" layoutY="145.0" text="No. Semana" />
-      <TextField fx:id="idNoSemanaBanco" layoutX="813.0" layoutY="141.0" prefHeight="25.0" prefWidth="50.0" />
+      <TextField fx:id="NoSemanaBanco" layoutX="813.0" layoutY="141.0" prefHeight="25.0" prefWidth="50.0" />
       <Label layoutX="734.0" layoutY="183.0" text="Razon Social" />
-      <TextField fx:id="idRazonBanco" layoutX="732.0" layoutY="210.0" prefHeight="25.0" prefWidth="254.0" />
+      <TextField fx:id="RazonBanco" layoutX="732.0" layoutY="210.0" prefHeight="25.0" prefWidth="254.0" />
       <Label layoutX="733.0" layoutY="245.0" text="Monto" />
-      <TextField fx:id="idMontoBanco" layoutX="733.0" layoutY="271.0" prefHeight="25.0" prefWidth="254.0" />
+      <TextField fx:id="MontoBanco" layoutX="733.0" layoutY="271.0" prefHeight="25.0" prefWidth="254.0" />
       <Button layoutX="889.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#GuardarBanco" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #1D5B98;" text="Guardar" textFill="WHITE">
          <font>
             <Font size="14.0" />
