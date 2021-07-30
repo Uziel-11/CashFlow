@@ -1,11 +1,15 @@
 package CashFlow.Controller;
 
 import CashFlow.Main;
+import CashFlow.Model.FlujoDinero;
 import CashFlow.Model.Gestion;
 import CashFlow.Model.GestionDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 public class GestionController {
@@ -39,47 +43,36 @@ public class GestionController {
 
     @FXML
     void GuardarBanco() {
-
-        new Gestion ("banco", Integer.valueOf(NoSemanaBanco.getText()),
-                RazonBanco.getText(), Integer.valueOf(MontoBanco.getText()));
-
-        GestionDAO dao= new GestionDAO();
-        boolean sms = dao.guardar();
-
-        mensaje(sms);
-
-        NoSemanaBanco.clear();
-        RazonBanco.clear();
-        MontoBanco.clear();
+     GestionDAO dao = new GestionDAO();
+        Gestion gestion = new Gestion();
+        String mes = obtenerMes();
+        String tipo = "bancos";
+        Double monto = Double.valueOf(MontoBanco.getText());
+        gestion.setMes(mes); gestion.setTipo(tipo);gestion.setMonto(monto);gestion.setRazonSocial(RazonBanco.getText()); gestion.setNumSemana(Integer.parseInt(NoSemanaBanco.getText()));
+        dao.guardar(gestion);
     }
 
     @FXML
     void GuardarCobro() {
-        new Gestion( "cobro", Integer.valueOf(NoSemanaCobrar.getText()),
-                RazonCobro.getText(), Integer.valueOf(MontoCobro.getText()));
-
         GestionDAO dao = new GestionDAO();
-        boolean sms = dao.guardar();
+        Gestion gestion = new Gestion();
+        String mes = obtenerMes();
+        String tipo = "cuentas por cobrar";
+        Double monto = Double.valueOf(MontoCobro.getText());
+        gestion.setMes(mes); gestion.setTipo(tipo);gestion.setMonto(monto);gestion.setRazonSocial(RazonCobro.getText()); gestion.setNumSemana(Integer.parseInt(NoSemanaCobrar.getText()));
+        dao.guardar(gestion);
 
-        mensaje(sms);
-        NoSemanaCobrar.clear();
-        RazonCobro.clear();
-        MontoCobro.clear();
     }
 
     @FXML
     void GuardarPago() {
-
-        new Gestion("pago", Integer.valueOf(NoSemanaPagar.getText()),
-                RazonPagar.getText(), Integer.valueOf(MontoPagar.getText()));
-
         GestionDAO dao = new GestionDAO();
-        boolean sms = dao.guardar();
-
-        mensaje(sms);
-        NoSemanaPagar.clear();
-        RazonPagar.clear();
-        MontoPagar.clear();
+        Gestion gestion = new Gestion();
+        String mes = obtenerMes();
+        String tipo = "cuentas por pagar";
+        Double monto = Double.valueOf(MontoPagar.getText());
+        gestion.setMes(mes); gestion.setTipo(tipo);gestion.setMonto(monto);gestion.setRazonSocial(RazonPagar.getText()); gestion.setNumSemana(Integer.parseInt(NoSemanaPagar.getText()));
+        dao.guardar(gestion);
     }
 
     public void mensaje(boolean mesaj){
@@ -101,6 +94,44 @@ public class GestionController {
     @FXML
     void regresarMenu() {
         Main.setFXML("Menu", "Menu");
+    }
+
+    public String obtenerMes() {
+        String mes = "";
+        Calendar c = new GregorianCalendar();
+        String dia = Integer.toString(c.get(Calendar.DATE));
+        int Mes = c.get(Calendar.MONTH);
+        String annio = Integer.toString(c.get(Calendar.YEAR));
+        /*System.out.println("dia: "+dia+" " +
+                "mes: "+Mes+" " +
+                "año: "+annio);*/
+        switch (Mes) {
+            case 0: mes = "enero";
+                break;
+            case 1: mes = "febrero";
+                break;
+            case 2: mes = "marzo";
+                break;
+            case 3: mes = "abril";
+                break;
+            case 4: mes = "mayo";
+                break;
+            case 5: mes = "junio";
+                break;
+            case 6: mes = "julio";
+                break;
+            case 7: mes = "agosto";
+                break;
+            case 8: mes = "septiembre";
+                break;
+            case 9: mes = "octubre";
+                break;
+            case 10: mes = "noviembre";
+                break;
+            case 11: mes = "diciembre";
+                break;
+        }
+        return mes;
     }
 
 }

@@ -2,51 +2,70 @@ package CashFlow.Model;
 
 public class Gestion {
 
-    private static String nombre;
-    private static int noSemana;
-    private static String razon;
-    private static int monto;
-
-    public Gestion(String nombre, int noSemana, String razon, int monto) {
-        this.nombre = nombre;
-        this.noSemana = noSemana;
-        this.razon = razon;
-        this.monto = monto;
-    }
+    private int idGestionDinero;
+    private int numSemana;
+    private String razonSocial;
+    private double monto;
+    private String mes;
+    private String tipo;
 
     public Gestion() {
-
     }
 
-    public String getNombre() {
-        return nombre;
+    public Gestion(int idGestionDinero, int numSemana, String razonSocial, double monto, String mes, String tipo) {
+        this.idGestionDinero = idGestionDinero;
+        this.numSemana = numSemana;
+        this.razonSocial = razonSocial;
+        this.monto = monto;
+        this.mes = mes;
+        this.tipo = tipo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public int getIdGestionDinero() {
+        return idGestionDinero;
     }
 
-    public int getNoSemana() {
-        return noSemana;
+    public void setIdGestionDinero(int idGestionDinero) {
+        this.idGestionDinero = idGestionDinero;
     }
 
-    public void setNoSemana(int noSemana) {
-        this.noSemana = noSemana;
+    public int getNumSemana() {
+        return numSemana;
     }
 
-    public String getRazon() {
-        return razon;
+    public void setNumSemana(int numSemana) {
+        this.numSemana = numSemana;
     }
 
-    public void setRazon(String razon) {
-        this.razon = razon;
+    public String getRazonSocial() {
+        return razonSocial;
     }
 
-    public int getMonto() {
+    public void setRazonSocial(String razonSocial) {
+        this.razonSocial = razonSocial;
+    }
+
+    public double getMonto() {
         return monto;
     }
 
-    public void setMonto(int monto) {
+    public void setMonto(double monto) {
         this.monto = monto;
+    }
+
+    public String getMes() {
+        return mes;
+    }
+
+    public void setMes(String mes) {
+        this.mes = mes;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }

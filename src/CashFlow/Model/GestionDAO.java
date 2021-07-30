@@ -15,21 +15,23 @@ public class GestionDAO {
     }
 
 
-    public boolean guardar(){
+    public boolean guardar(Gestion gestion){
 
-        Gestion gestion = new Gestion();
+
         boolean resultado = false;
 
         if (connection != null){
-            String sql = "INSERT INTO gestion VALUES(?,?,?,?)";
+            String sql = "INSERT INTO gestiondinero VALUES(?,?,?,?,?,?)";
 
             try {
 
                 PreparedStatement statement = connection.prepareStatement(sql);
-                statement.setString(1, gestion.getNombre());
-                statement.setInt(2, gestion.getNoSemana());
-                statement.setString(3, gestion.getRazon());
-                statement.setInt(4, gestion.getMonto());
+                statement.setInt(1, gestion.getIdGestionDinero());
+                statement.setInt(2, gestion.getNumSemana());
+                statement.setString(3, gestion.getRazonSocial());
+                statement.setDouble(4, gestion.getMonto());
+                statement.setString(5, gestion.getMes());
+                statement.setString(6, gestion.getTipo());
 
                 if (statement.executeUpdate() == ACCEPT){
                     resultado = true;
