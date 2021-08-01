@@ -1,19 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.ReporteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="964.0" prefWidth="1237.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.ReporteController">
    <children>
-      <Button layoutX="198.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" prefHeight="46.0" prefWidth="110.0" style="-fx-background-color: #F91A4E;" text="Regresar" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1d5b98" height="93.0" layoutY="-51.0" stroke="#1d5b98" strokeType="INSIDE" width="1237.0" />
+      <Button layoutX="33.0" layoutY="866.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" prefHeight="46.0" prefWidth="110.0" style="-fx-background-color: #1D5B98;" text="Regresar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button layoutX="197.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#Mostrar" prefHeight="46.0" prefWidth="110.0" style="-fx-background-color: #1D5B98;" text="Mostrar" textFill="WHITE">
+      <ComboBox fx:id="idComboBoxMes" layoutX="1073.0" layoutY="65.0" prefWidth="150.0" />
+      <TableView fx:id="TableViewPorCobrar" layoutX="29.0" layoutY="103.0" prefHeight="171.0" prefWidth="546.0">
+        <columns>
+          <TableColumn fx:id="idClientPorCobrar" prefWidth="104.66668128967285" text="Por cobrar" />
+          <TableColumn fx:id="idSeaman1PorCobrar" prefWidth="78.6666259765625" text="Semana 1" />
+            <TableColumn fx:id="idSemana2PorCobrar" prefWidth="85.33332824707031" text="Semana 2" />
+            <TableColumn fx:id="idSemana3PorCobrar" prefWidth="80.66668701171875" text="Semana 3" />
+            <TableColumn fx:id="idSemana4PorCobrar" prefWidth="87.33331298828125" text="Semana 4" />
+            <TableColumn fx:id="idFinalPorCobrar" prefWidth="106.66665649414062" text="Final" />
+        </columns>
+      </TableView>
+      <TableView fx:id="TableViewPorPagar" layoutX="646.0" layoutY="103.0" prefHeight="171.0" prefWidth="515.0">
+        <columns>
+          <TableColumn fx:id="idClientePorPagar" prefWidth="116.66668701171875" text="Por pagar" />
+          <TableColumn fx:id="idSemana1Pagar" prefWidth="87.3333740234375" text="Semana 1" />
+            <TableColumn fx:id="idSemana2Pagar" minWidth="7.33331298828125" prefWidth="72.6666259765625" text="Semana 2" />
+            <TableColumn fx:id="idSemana3Pagar" prefWidth="71.33331298828125" text="Semana 3" />
+            <TableColumn fx:id="idSemana4Pagar" prefWidth="68.0" text="Semana 4" />
+            <TableColumn fx:id="idFinalPagar" prefWidth="97.33333333333337" text="Final" />
+        </columns>
+      </TableView>
+      <TableView fx:id="TableViewIngresos" layoutX="29.0" layoutY="296.0" prefHeight="200.0" prefWidth="546.0">
+        <columns>
+          <TableColumn fx:id="idIngresosName" prefWidth="89.33334541320801" text="Ingresos" />
+          <TableColumn fx:id="idSemana1Ingreso" prefWidth="97.99999237060547" text="Semana 1" />
+            <TableColumn fx:id="idSemana2Ingreso" prefWidth="88.66670227050781" text="Semana 2" />
+            <TableColumn fx:id="idSemana3Ingreso" prefWidth="88.666748046875" text="Semana 3" />
+            <TableColumn fx:id="idSemana4Ingreso" prefWidth="79.99993896484375" text="Semana 4" />
+            <TableColumn fx:id="idFinalIngreso" prefWidth="105.33334350585938" text="Final" />
+        </columns>
+      </TableView>
+      <Label layoutX="29.0" layoutY="58.0" text="Cuentas por cobrar">
          <font>
             <Font size="14.0" />
          </font>
-      </Button>
+      </Label>
+      <Label layoutX="589.0" layoutY="58.0" text="Cuentas por pagar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="TableViewGastos" layoutX="645.0" layoutY="295.0" prefHeight="200.0" prefWidth="515.0">
+        <columns>
+          <TableColumn fx:id="idGastos" prefWidth="75.0" text="Gastos" />
+          <TableColumn fx:id="idSemana1Gastos" prefWidth="97.33331298828125" text="Semana 1" />
+            <TableColumn fx:id="idSemana2Gastos" prefWidth="88.0" text="Semana 2" />
+            <TableColumn fx:id="idSemana3Gastos" prefWidth="79.33331298828125" text="Semana 3" />
+            <TableColumn fx:id="idSemana4Gastos" prefWidth="88.0" text="Semana 4" />
+            <TableColumn fx:id="idFinalGastos" prefWidth="87.33331298828125" text="Final" />
+        </columns>
+      </TableView>
+      <TableView fx:id="TableViewBancos" layoutX="221.0" layoutY="624.0" prefHeight="242.0" prefWidth="707.0">
+        <columns>
+          <TableColumn fx:id="idBancoName" prefWidth="123.33332824707031" text="Bancos" />
+          <TableColumn fx:id="idSemana1Banco" prefWidth="125.3333740234375" text="Semana 1" />
+            <TableColumn fx:id="idSemana2Banco" prefWidth="119.99996948242188" text="Semana 2" />
+            <TableColumn fx:id="idSemana3Banco" prefWidth="108.0" text="Semana 3" />
+            <TableColumn fx:id="idSemana4Banco" prefWidth="121.33331298828125" text="Semana 4" />
+            <TableColumn fx:id="idFinalBanco" prefWidth="112.666748046875" text="Final" />
+        </columns>
+      </TableView>
+      <Label layoutX="530.0" layoutY="5.0" text="Indicadores de dinero">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="1025.0" layoutY="66.0" text="Mes">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="151.0" layoutY="591.0" text="Margenes de rentabilidad ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="370.0" layoutY="592.0" text="-102%" />
+      <Label layoutX="29.0" layoutY="276.0" text="Flujo de efectivo" />
+      <Label layoutX="714.0" layoutY="592.0" text="6%" />
+      <Label layoutX="614.0" layoutY="592.0" text="84%" />
+      <Label layoutX="508.0" layoutY="592.0" text="58%" />
+      <Label layoutX="833.0" layoutY="593.0" text="45%" />
+      <TableView fx:id="TableViewDiferencia" layoutX="302.0" layoutY="519.0" prefHeight="58.0" prefWidth="487.0">
+        <columns>
+          <TableColumn fx:id="idDiferenciaName" prefWidth="84.0" text="Diferencia" />
+          <TableColumn fx:id="idSemana1Diferencia" prefWidth="82.6666259765625" text="Semana 1" />
+            <TableColumn fx:id="idSemana2Diferencia" prefWidth="85.33328247070312" text="Semana 2" />
+            <TableColumn fx:id="idSemana3Diferencia" text="Semana 3" />
+            <TableColumn fx:id="idSemana4Diferencia" prefWidth="75.99993896484375" text="Semana 4" />
+            <TableColumn fx:id="idFinalDirerencia" prefWidth="81.33343505859375" text="Final" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
