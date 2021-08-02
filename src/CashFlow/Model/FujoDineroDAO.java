@@ -123,4 +123,33 @@ public class FujoDineroDAO {
         return a;
     }
 
+    public ObservableList<valores> getIngresosG(String tipo, String mes1, int semana) {
+        ObservableList<valores> flujo = FXCollections.observableArrayList();
+
+        if (connection != null) {
+            String sql = "select categoria,  sum(cantidad ) as cantidad  from flujodinero where  tipoFlujo = ? and mes= ? and numSemana = ?\n" +
+                    "group by categoria;";
+
+            try {
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setString(1,tipo);
+                statement.setString(2,mes1);
+                statement.setInt(3,semana);
+                ResultSet results = statement.executeQuery();
+                while (results.next()) {
+                    String categoria = results.getString(1);
+                    Double cantidad = results.getDouble(2);
+
+
+                    valores data = new valores(categoria, cantidad);
+                    flujo.add(data);
+                }
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        return flujo;
+    }
+
 }

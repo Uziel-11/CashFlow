@@ -15,9 +15,9 @@ public class ReporteJasper {
         JasperPrint jasperPrintWindow;
        try {
             jasperPrintWindow = JasperFillManager.fillReport(
-                    "Reportes/julio.jasper", null, conector.getConnection());
+                    "Reportes/julio_3.jasper", null, conector.getConnection());
             JasperExportManager.exportReportToPdfFile(jasperPrintWindow, "Informes/julio2021.pdf");
-            JasperViewer.viewReport(jasperPrintWindow, true);
+           JasperViewer.viewReport(jasperPrintWindow, true);
         } catch (JRException e) {
             // TODO: handle exception
             e.printStackTrace();

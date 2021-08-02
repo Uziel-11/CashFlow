@@ -7,9 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="JasperReportLibraries" level="application" />
     <orderEntry type="library" exported="" name="mysql-connector-java-8.0.20" level="application" />
     <orderEntry type="library" exported="" name="lib" level="application" />
-    <orderEntry type="library" exported="" name="JAVAFX-11" level="application" />
+    <orderEntry type="library" name="jaspers2" level="application" />
   </component>
 </module>

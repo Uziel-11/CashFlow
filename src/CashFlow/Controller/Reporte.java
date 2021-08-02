@@ -1,15 +1,25 @@
 package CashFlow.Controller;
 
 import CashFlow.Main;
+import CashFlow.Model.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
-public class Reporte {
+import java.net.URL;
+import java.util.Date;
+import java.util.ResourceBundle;
+
+public class Reporte implements Initializable {
 
     @FXML
-    private ComboBox<?> mes;
+    private ComboBox<String> mes;
 
     @FXML
     private TableView<?> porCobrar;
@@ -54,43 +64,43 @@ public class Reporte {
     private TableColumn<?, ?> finalPagar;
 
     @FXML
-    private TableView<?> ingresos;
+    private TableView<ingresosGastos> ingresos;
 
     @FXML
-    private TableColumn<?, ?> idIngreso;
+    private TableColumn<ingresosGastos, String> idIngreso;
 
     @FXML
-    private TableColumn<?, ?> semana1I;
+    private TableColumn<ingresosGastos, Double> semana1I;
 
     @FXML
-    private TableColumn<?, ?> semana2I;
+    private TableColumn<ingresosGastos, Double> semana2I;
 
     @FXML
-    private TableColumn<?, ?> semana3I;
+    private TableColumn<ingresosGastos, Double> semana3I;
 
     @FXML
-    private TableColumn<?, ?> semana4I;
+    private TableColumn<ingresosGastos, Double> semana4I;
 
     @FXML
     private TableColumn<?, ?> finalIngreso;
 
     @FXML
-    private TableView<?> gastos;
+    private TableView<ingresosGastos> gastos;
 
     @FXML
-    private TableColumn<?, ?> idGastos;
+    private TableColumn<ingresosGastos, String> idGastos;
 
     @FXML
-    private TableColumn<?, ?> semana1G;
+    private TableColumn<ingresosGastos, Double> semana1G;
 
     @FXML
-    private TableColumn<?, ?> semana2G;
+    private TableColumn<ingresosGastos, Double> semana2G;
 
     @FXML
-    private TableColumn<?, ?> semana3G;
+    private TableColumn<ingresosGastos, Double> semana3G;
 
     @FXML
-    private TableColumn<?, ?> semana4G;
+    private TableColumn<ingresosGastos, Double> semana4G;
 
     @FXML
     private TableColumn<?, ?> finalGastos;
@@ -136,11 +146,60 @@ public class Reporte {
 
     @FXML
     private TableColumn<?, ?> finalDirerencia;
+    ObservableList<valores> datos = FXCollections.observableArrayList();
+    ObservableList<valores> datos2 = FXCollections.observableArrayList();
+
+    ObservableList<String> combox = FXCollections.observableArrayList(
+            "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+    );
 
     @FXML
     void regresarMenu() {
         Main.setFXML("Menu", "Menu");
     }
 
-}
+    @FXML
+    void mostrarReporte(MouseEvent event) {
 
+        ReporteJasper informe = new ReporteJasper();
+        informe.reporteMes();
+    }
+
+
+    public void llenarEntradas() {
+        String valor1 = mes.getValue();
+
+        /*idIngreso.setCellValueFactory(new PropertyValueFactory<ingresosGastos, String>("categoria"));
+        semana1I.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("valor"));
+        semana2I.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("semana2"));
+        semana3I.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("semana3"));
+        semana4I.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("semana4"));
+        FujoDineroDAO dao = new FujoDineroDAO();
+
+
+        datos = dao.getIngresosG("entrada", valor1, 1);
+
+        datos = dao.getIngresosG("entrada", valor1, 2);
+        ingresos.setItems(datos);*/
+
+
+    }
+
+    public void llenarSalidas() {
+        String valor1 = mes.getValue();
+
+       /* idGastos.setCellValueFactory(new PropertyValueFactory<ingresosGastos, String>("categoria"));
+        semana1G.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("semana1"));
+        semana2G.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("semana2"));
+        semana3G.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("semana3"));
+        semana4G.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("semana4"));
+        FujoDineroDAO dao = new FujoDineroDAO();
+        datos2 = dao.getIngresosG("salida", valor1);
+        gastos.setItems(datos2);*/
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+       mes.setItems(combox);
+    }
+
+    }
