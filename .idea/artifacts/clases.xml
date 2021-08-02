@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="clases">
+    <output-path>$PROJECT_DIR$/out/artifacts/clases</output-path>
+    <root id="archive" name="clases.jar">
+      <element id="directory" name="CashFlow">
+        <element id="directory" name="Model">
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/CashFlow/CashFlow/Model/categoriasDAO.class" />
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/CashFlow/CashFlow/Model/diferenciaDAO.class" />
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/CashFlow/CashFlow/Model/FlujoDinero.class" />
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/CashFlow/CashFlow/Model/Gestion.class" />
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/CashFlow/CashFlow/Model/margen.class" />
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/CashFlow/CashFlow/Model/ReporteJasper.class" />
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/CashFlow/CashFlow/Model/GestionDAO.class" />
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/CashFlow/CashFlow/Model/margenDAO.class" />
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/CashFlow/CashFlow/Model/diferencia.class" />
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/CashFlow/CashFlow/Model/FujoDineroDAO.class" />
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/CashFlow/CashFlow/Model/categorias.class" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

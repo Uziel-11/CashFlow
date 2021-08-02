@@ -13,15 +13,15 @@ public class ReporteJasper {
     public void reporteMes() {
         AdapterMySQL conector = new AdapterMySQL();
         JasperPrint jasperPrintWindow;
-       /* try {
+       try {
             jasperPrintWindow = JasperFillManager.fillReport(
                     "Reportes/julio.jasper", null, conector.getConnection());
             JasperExportManager.exportReportToPdfFile(jasperPrintWindow, "Informes/julio2021.pdf");
-            JasperViewer.viewReport(jasperPrintWindow, false);
+            JasperViewer.viewReport(jasperPrintWindow, true);
         } catch (JRException e) {
             // TODO: handle exception
             e.printStackTrace();
-        }*/
+        }
 
     }
 
