@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1330.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.Reporte">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1330.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CashFlow.Controller.Reporte">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1d5b98" height="93.0" layoutY="-51.0" stroke="#1d5b98" strokeType="INSIDE" width="1237.0" />
       <Button layoutX="29.0" layoutY="688.0" mnemonicParsing="false" onMouseClicked="#regresarMenu" prefHeight="46.0" prefWidth="110.0" style="-fx-background-color: #1D5B98;" text="Regresar" textFill="WHITE">
@@ -28,7 +28,7 @@
             <TableColumn fx:id="finalPC" prefWidth="68.66670735677087" text="Final" />
         </columns>
       </TableView>
-      <TableView fx:id="porPagar" layoutX="703.0" layoutY="103.0" prefHeight="119.0" prefWidth="555.0">
+      <TableView fx:id="porPagar" layoutX="703.0" layoutY="103.0" prefHeight="119.0" prefWidth="578.0">
         <columns>
           <TableColumn fx:id="idPorPagar" prefWidth="116.66668701171875" text="Por pagar" />
           <TableColumn fx:id="semana1P" prefWidth="87.3333740234375" text="Semana 1" />
@@ -36,10 +36,10 @@
             <TableColumn fx:id="semana3P" prefWidth="71.33331298828125" text="Semana 3" />
             <TableColumn fx:id="semana4P" prefWidth="68.0" text="Semana 4" />
             <TableColumn fx:id="semana5P" prefWidth="75.0" text="Semana 5" />
-            <TableColumn fx:id="finalPagar" prefWidth="61.33333333333337" text="Final" />
+            <TableColumn fx:id="finalPagar" prefWidth="82.4000244140625" text="Final" />
         </columns>
       </TableView>
-      <TableView fx:id="ingresos" layoutX="29.0" layoutY="272.0" prefHeight="134.0" prefWidth="577.0">
+      <TableView fx:id="ingresos" layoutX="29.0" layoutY="253.0" prefHeight="111.0" prefWidth="578.0">
         <columns>
           <TableColumn fx:id="idIngreso" prefWidth="89.33334541320801" text="Ingresos" />
           <TableColumn fx:id="semana1I" prefWidth="97.99999237060547" text="Semana 1" />
@@ -60,7 +60,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="gastos" layoutX="705.0" layoutY="270.0" prefHeight="134.0" prefWidth="555.0">
+      <TableView fx:id="gastos" layoutX="705.0" layoutY="251.0" prefHeight="111.0" prefWidth="578.0">
         <columns>
           <TableColumn fx:id="idGastos" prefWidth="75.0" text="Gastos" />
           <TableColumn fx:id="semana1G" prefWidth="97.33331298828125" text="Semana 1" />
@@ -68,7 +68,7 @@
             <TableColumn fx:id="semana3G" prefWidth="79.33331298828125" text="Semana 3" />
             <TableColumn fx:id="semana4G" prefWidth="88.0" text="Semana 4" />
             <TableColumn fx:id="semana5G" prefWidth="75.0" text="Semana 5" />
-            <TableColumn fx:id="finalGastos" prefWidth="50.66670735677087" text="Final" />
+            <TableColumn fx:id="finalGastos" prefWidth="72.0" text="Final" />
         </columns>
       </TableView>
       <TableView fx:id="bancos" layoutX="221.0" layoutY="555.0" prefHeight="200.0" prefWidth="740.0">
@@ -92,30 +92,30 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="575.0" layoutY="234.0" text="Flujo de efectivo" />
-      <TableView fx:id="TableViewDiferencia" layoutX="302.0" layoutY="429.0" prefHeight="58.0" prefWidth="540.0">
+      <Label layoutX="612.0" layoutY="228.0" text="Flujo de efectivo" />
+      <TableView fx:id="TableViewDiferencia" layoutX="277.0" layoutY="395.0" prefHeight="58.0" prefWidth="612.0">
         <columns>
           <TableColumn fx:id="idDiferencia" prefWidth="84.0" text="Diferencia" />
           <TableColumn fx:id="semana1D" prefWidth="82.6666259765625" text="Semana 1" />
-            <TableColumn fx:id="semana2D" prefWidth="85.33328247070312" text="Semana 2" />
-            <TableColumn fx:id="semana3D" text="Semana 3" />
-            <TableColumn fx:id="semana4D" prefWidth="75.99993896484375" text="Semana 4" />
-            <TableColumn fx:id="idSemana5Diferencia" prefWidth="75.0" text="Semana 5" />
-            <TableColumn fx:id="finalDirerencia" prefWidth="55.33331298828125" text="Final" />
-            <TableColumn fx:id="idDiferencia1" prefWidth="84.0" text="Diferencia" />
+            <TableColumn fx:id="semana2D" prefWidth="91.99996948242188" text="Semana 2" />
+            <TableColumn fx:id="semana3D" prefWidth="85.5999755859375" text="Semana 3" />
+            <TableColumn fx:id="semana4D" prefWidth="76.0" text="Semana 4" />
+            <TableColumn fx:id="idSemana5Diferencia" prefWidth="83.199951171875" text="Semana 5" />
+            <TableColumn fx:id="finalDirerencia" prefWidth="107.199951171875" text="Final" />
+            <TableColumn fx:id="idDiferencia1" prefWidth="14.4000244140625" text="Diferencia" />
         </columns>
       </TableView>
       <Button layoutX="1038.0" layoutY="664.0" mnemonicParsing="false" onMouseClicked="#mostrarReporte" text="Mostrar" />
-      <TableView fx:id="TableViewMargen" layoutX="302.0" layoutY="490.0" prefHeight="58.0" prefWidth="540.0">
+      <TableView fx:id="TableViewMargen" layoutX="280.0" layoutY="490.0" prefHeight="58.0" prefWidth="612.0">
          <columns>
             <TableColumn fx:id="idMargen" prefWidth="84.0" text="Margen" />
-            <TableColumn fx:id="semana1M" prefWidth="82.6666259765625" text="Semana 1" />
-            <TableColumn fx:id="semana2M" prefWidth="85.33328247070312" text="Semana 2" />
-            <TableColumn fx:id="semana3M" text="Semana 3" />
-            <TableColumn fx:id="semana4M" prefWidth="75.99993896484375" text="Semana 4" />
-            <TableColumn fx:id="Semana5M" prefWidth="75.0" text="Semana 5" />
-            <TableColumn fx:id="finalMargen" prefWidth="55.33331298828125" text="Final" />
-            <TableColumn fx:id="idDiferencia11" prefWidth="84.0" text="Diferencia" />
+            <TableColumn fx:id="semana1M" prefWidth="82.6666259765625" text="Semana 1 %" />
+            <TableColumn fx:id="semana2M" prefWidth="85.33328247070312" text="Semana 2 %" />
+            <TableColumn fx:id="semana3M" prefWidth="88.800048828125" text="Semana 3 %" />
+            <TableColumn fx:id="semana4M" prefWidth="83.199951171875" text="Semana 4 %" />
+            <TableColumn fx:id="Semana5M" prefWidth="91.199951171875" text="Semana 5 %" />
+            <TableColumn fx:id="finalMargen" prefWidth="95.2000732421875" text="Final %" />
+            <TableColumn fx:id="idDiferencia11" prefWidth="12.800048828125" text="Diferencia" />
          </columns>
       </TableView>
    </children>

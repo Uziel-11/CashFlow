@@ -21,11 +21,11 @@ public class FujoDineroDAO {
         connection = conector.getConnection();
     }
 
-    public ObservableList<FlujoDinero> getFlujoDinero() {
-        ObservableList<FlujoDinero> flujo = FXCollections.observableArrayList();
+    public ObservableList<flujoCash> getFlujoDinero() {
+        ObservableList<flujoCash> flujo = FXCollections.observableArrayList();
 
         if (connection != null) {
-            String sql = "select * from flujodinero";
+            String sql = "select * from flujocash";
 
             try {
                 PreparedStatement statement = connection.prepareStatement(sql);
@@ -37,12 +37,12 @@ public class FujoDineroDAO {
                     String subCategoria = results.getString(4);
                     String tipoFlujo = results.getString(5);
                     Double cantidad = results.getDouble(6);
-                    Date fecha = results.getDate(7);
-                    int numSemana = results.getInt(8);
+                    int numSemana = results.getInt(7);
+                    Date fecha = results.getDate(8);
                     String mes = results.getString(9);
 
 
-                    FlujoDinero flujoDinero = new FlujoDinero(idFlujoDinero,descripcion,categoria,subCategoria,tipoFlujo,cantidad,fecha,numSemana,mes);
+                    flujoCash flujoDinero = new flujoCash(idFlujoDinero,descripcion,categoria,subCategoria,tipoFlujo,cantidad,numSemana,fecha,mes);
                     flujo.add(flujoDinero);
                 }
             } catch (SQLException e) {
@@ -54,12 +54,12 @@ public class FujoDineroDAO {
     }
 
 
-    public boolean insertar(FlujoDinero flujo) {
+    public boolean insertar(flujoCash flujo) {
         LocalDate fechaPC =LocalDate.now();
         boolean resultado = false;
         if (connection != null) {
 
-            String sql = "insert into flujodinero values(?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into flujocash values(?,?,?,?,?,?,?,?,?)";
 
             try {
                 PreparedStatement statement = connection.prepareStatement(sql);
@@ -69,8 +69,8 @@ public class FujoDineroDAO {
                 statement.setString(4, flujo.getSubcategoria());
                 statement.setString(5, flujo.getTipoFlujo());
                 statement.setDouble(6, flujo.getCantidad());
-                statement.setDate(7, (Date)flujo.getFecha());
-                statement.setInt(8,flujo.getNumsemana());
+                statement.setInt(7,flujo.getNumSemana());
+                statement.setDate(8, (Date)flujo.getFecha());
                 statement.setString(9,flujo.getMes());
                 if (statement.executeUpdate() == ACCEPT)
                     resultado = true;
@@ -81,6 +81,7 @@ public class FujoDineroDAO {
         }
         return resultado;
     }
+
     public double sacarTotal1(int numSemana) {
         double a = 0;
         if (connection != null){
@@ -125,7 +126,7 @@ public class FujoDineroDAO {
 
     public ObservableList<valoresTabla> getIngresosG(String mes1) {
         ObservableList<valoresTabla> flujo = FXCollections.observableArrayList();
-
+        double s1=0; double s2=0;double s3=0;double s4=0;double s5=0; double tot=0;
         if (connection != null) {
             String sql = "SELECT subCategoria, sum(semana1),sum(semana2), sum(semana3), sum(semana4), sum(semana5) from flujodinero join categoria on flujodinero.categoria = categoria.nombre and tipoFlujo = 'entrada'  and flujodinero.mes = ?\n" +
                     "group by subCategoria";
@@ -142,9 +143,51 @@ public class FujoDineroDAO {
                     Double semana4 = results.getDouble(5);
                     Double semana5 = results.getDouble(6);
 
-                    valoresTabla data = new valoresTabla(subCategoria, semana1,semana2,semana3,semana4,semana5);
+
+                    double total = semana1 + semana2 +semana3+semana4 + semana5;
+                    s1= s1+semana1; s2=s2+semana2; s3=s3+semana3; s4=s4+semana4; s5=s5+semana5;
+                    tot=tot+total;
+                    valoresTabla data = new valoresTabla(subCategoria, semana1,semana2,semana3,semana4,semana5,total);
                     flujo.add(data);
                 }
+                valoresTabla data = new valoresTabla("sumTotal",s1,s2,s3,s4,s5,tot);
+                flujo.add(data);
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        return flujo;
+    }
+
+    public ObservableList<valoresTabla> getSalida(String mes1) {
+        ObservableList<valoresTabla> flujo = FXCollections.observableArrayList();
+        double s1=0; double s2=0;double s3=0;double s4=0;double s5=0; double tot=0;
+        if (connection != null) {
+            String sql = "SELECT subCategoria, sum(semana1),sum(semana2), sum(semana3), sum(semana4), sum(semana5) from flujodinero join categoria on flujodinero.categoria = categoria.nombre and tipoFlujo = 'salida'  and flujodinero.mes = ?\n" +
+                    "group by subCategoria";
+
+            try {
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setString(1,mes1);
+                ResultSet results = statement.executeQuery();
+                while (results.next()) {
+                    String subCategoria = results.getString(1);
+                    Double semana1 = results.getDouble(2);
+                    Double semana2 = results.getDouble(3);
+                    Double semana3 = results.getDouble(4);
+                    Double semana4 = results.getDouble(5);
+                    Double semana5 = results.getDouble(6);
+
+
+                    double total = semana1 + semana2 +semana3+semana4 + semana5;
+                    s1= s1+semana1; s2=s2+semana2; s3=s3+semana3; s4=s4+semana4; s5=s5+semana5;
+                    tot=tot+total;
+                    valoresTabla data = new valoresTabla(subCategoria, semana1,semana2,semana3,semana4,semana5,total);
+                    flujo.add(data);
+                }
+                valoresTabla data = new valoresTabla("sumTotal",s1,s2,s3,s4,s5,tot);
+                flujo.add(data);
             } catch (SQLException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

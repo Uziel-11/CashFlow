@@ -7,14 +7,16 @@ public class valoresTabla {
     private Double semana3;
     private Double semana4;
     private Double semana5;
+    private Double total;
 
-    public valoresTabla(String subCategoria, Double semana1, Double semana2, Double semana3, Double semana4, Double semana5) {
+    public valoresTabla(String subCategoria, Double semana1, Double semana2, Double semana3, Double semana4, Double semana5, Double total) {
         this.subCategoria = subCategoria;
         this.semana1 = semana1;
         this.semana2 = semana2;
         this.semana3 = semana3;
         this.semana4 = semana4;
         this.semana5 = semana5;
+        this.total = total;
     }
 
     public valoresTabla() {
@@ -66,6 +68,14 @@ public class valoresTabla {
 
     public void setSemana5(Double semana5) {
         this.semana5 = semana5;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
     }
 }
 

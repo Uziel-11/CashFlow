@@ -2,39 +2,31 @@ package CashFlow.Model;
 
 import java.util.Date;
 
-public class FlujoDinero {
+public class flujoCash {
 
     private int idFlujoDinero;
     private String Descripcion;
     private String Categoria;
     private String Subcategoria;
     private String TipoFlujo;
-    private double semana1;
-    private double semana2;
-    private double semana3;
-    private double semana4;
-    private double semana5;
+    private double cantidad;
+    private int numSemana;
     private Date Fecha;
-
     private String Mes;
 
-    public FlujoDinero(int idFlujoDinero, String descripcion, String categoria, String subcategoria, String tipoFlujo, double semana1, double semana2, double semana3, double semana4, double semana5, Date fecha,  String mes) {
+    public flujoCash(int idFlujoDinero, String descripcion, String categoria, String subcategoria, String tipoFlujo, double cantidad, int numSemana, Date fecha, String mes) {
         this.idFlujoDinero = idFlujoDinero;
         Descripcion = descripcion;
         Categoria = categoria;
         Subcategoria = subcategoria;
         TipoFlujo = tipoFlujo;
-        this.semana1 = semana1;
-        this.semana2 = semana2;
-        this.semana3 = semana3;
-        this.semana4 = semana4;
-        this.semana5 = semana5;
+        this.cantidad = cantidad;
+        this.numSemana = numSemana;
         Fecha = fecha;
         Mes = mes;
     }
 
-    public FlujoDinero(){
-
+    public flujoCash() {
     }
 
     public int getIdFlujoDinero() {
@@ -77,44 +69,20 @@ public class FlujoDinero {
         TipoFlujo = tipoFlujo;
     }
 
-    public double getSemana1() {
-        return semana1;
+    public double getCantidad() {
+        return cantidad;
     }
 
-    public void setSemana1(double semana1) {
-        this.semana1 = semana1;
+    public void setCantidad(double cantidad) {
+        this.cantidad = cantidad;
     }
 
-    public double getSemana2() {
-        return semana2;
+    public int getNumSemana() {
+        return numSemana;
     }
 
-    public void setSemana2(double semana2) {
-        this.semana2 = semana2;
-    }
-
-    public double getSemana3() {
-        return semana3;
-    }
-
-    public void setSemana3(double semana3) {
-        this.semana3 = semana3;
-    }
-
-    public double getSemana4() {
-        return semana4;
-    }
-
-    public void setSemana4(double semana4) {
-        this.semana4 = semana4;
-    }
-
-    public double getSemana5() {
-        return semana5;
-    }
-
-    public void setSemana5(double semana5) {
-        this.semana5 = semana5;
+    public void setNumSemana(int numSemana) {
+        this.numSemana = numSemana;
     }
 
     public Date getFecha() {
@@ -124,7 +92,6 @@ public class FlujoDinero {
     public void setFecha(Date fecha) {
         Fecha = fecha;
     }
-
 
     public String getMes() {
         return Mes;

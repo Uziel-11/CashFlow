@@ -4,6 +4,7 @@ import CashFlow.Main;
 import CashFlow.Model.FlujoDinero;
 import CashFlow.Model.FujoDineroDAO;
 import CashFlow.Model.categoriasDAO;
+import CashFlow.Model.flujoCash;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,19 +19,19 @@ import java.util.*;
 public class FlujoController implements Initializable {
 
     @FXML
-    private TableView<FlujoDinero> tablaFlujo;
+    private TableView<flujoCash> tablaFlujo;
 
     @FXML
-    private TableColumn<FlujoDinero, Date> fechaColum;
+    private TableColumn<flujoCash, Date> fechaColum;
 
     @FXML
-    private TableColumn<FlujoDinero, String> descripcionColum;
+    private TableColumn<flujoCash, String> descripcionColum;
 
     @FXML
-    private TableColumn<FlujoDinero, String> categoriaColum;
+    private TableColumn<flujoCash, String> categoriaColum;
 
     @FXML
-    private TableColumn<FlujoDinero, String> subCateColum;
+    private TableColumn<flujoCash, String> subCateColum;
 
     @FXML
     private ComboBox<String> categorias;
@@ -52,7 +53,7 @@ public class FlujoController implements Initializable {
 
     FlujoDinero flujo = new FlujoDinero();
     FujoDineroDAO dao = new FujoDineroDAO();
-    ObservableList<FlujoDinero> datos = FXCollections.observableArrayList();
+    ObservableList<flujoCash> datos = FXCollections.observableArrayList();
     ObservableList<String> combox = FXCollections.observableArrayList();
     @FXML
     void guardar() {
@@ -72,8 +73,8 @@ public class FlujoController implements Initializable {
         } else {
             tipo = "salida";
         }
-        FlujoDinero flujo = new FlujoDinero();
-        flujo.setCantidad(cant);flujo.setDescripcion(descripcion.getText()); flujo.setTipoFlujo(tipo); flujo.setFecha(dateSql); flujo.setNumsemana(numsem); flujo.setMes(mes); flujo.setCategoria(selectCategoria[0]);flujo.setSubcategoria(selectCategoria[1]);
+        flujoCash flujo = new flujoCash();
+        flujo.setCantidad(cant);flujo.setDescripcion(descripcion.getText()); flujo.setTipoFlujo(tipo); flujo.setFecha(dateSql); flujo.setNumSemana(numsem); flujo.setMes(mes); flujo.setCategoria(selectCategoria[0]);flujo.setSubcategoria(selectCategoria[1]);
 
          if(dao.insertar(flujo)){
              entradaBox.setSelected(false);
@@ -87,14 +88,12 @@ public class FlujoController implements Initializable {
     }
 
     public void llenarTabla() {
-        List<FlujoDinero> flujoList = dao.getFlujoDinero();
+        List<flujoCash> flujoList = dao.getFlujoDinero();
 
-        fechaColum.setCellValueFactory(new PropertyValueFactory<FlujoDinero, Date>("fecha"));
-        descripcionColum.setCellValueFactory(new PropertyValueFactory<FlujoDinero, String>("descripcion"));
-        categoriaColum.setCellValueFactory(new PropertyValueFactory<FlujoDinero, String>("categoria"));
-        subCateColum.setCellValueFactory(new PropertyValueFactory<FlujoDinero, String>("subcategoria"));
-
-
+        fechaColum.setCellValueFactory(new PropertyValueFactory<flujoCash, Date>("fecha"));
+        descripcionColum.setCellValueFactory(new PropertyValueFactory<flujoCash, String>("descripcion"));
+        categoriaColum.setCellValueFactory(new PropertyValueFactory<flujoCash, String>("categoria"));
+        subCateColum.setCellValueFactory(new PropertyValueFactory<flujoCash, String>("subcategoria"));
         datos = dao.getFlujoDinero();
         tablaFlujo.setItems(datos);
     }
