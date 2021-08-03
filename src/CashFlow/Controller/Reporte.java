@@ -39,6 +39,9 @@ public class Reporte implements Initializable {
     private TableColumn<valoresTabla, Double> semana4PC;
 
     @FXML
+    private TableColumn<valoresTabla, Double> semana5C;
+
+    @FXML
     private TableColumn<valoresTabla, Double> finalPC;
 
     @FXML
@@ -58,6 +61,9 @@ public class Reporte implements Initializable {
 
     @FXML
     private TableColumn<valoresTabla, Double> semana4P;
+
+    @FXML
+    private TableColumn<valoresTabla, Double> semana5P;
 
     @FXML
     private TableColumn<valoresTabla, Double> finalPagar;
@@ -130,6 +136,9 @@ public class Reporte implements Initializable {
     private TableColumn<valoresTabla, Double> semana4B;
 
     @FXML
+    private TableColumn<valoresTabla, Double> semana5B;
+
+    @FXML
     private TableColumn<valoresTabla, Double> finalBanco;
 
     @FXML
@@ -185,6 +194,10 @@ public class Reporte implements Initializable {
     ObservableList<valoresTabla> datos2 = FXCollections.observableArrayList();
     ObservableList<valoresTabla> datos3 = FXCollections.observableArrayList();
     ObservableList<valoresTabla> datos4 = FXCollections.observableArrayList();
+    ObservableList<valoresTabla> datos5 = FXCollections.observableArrayList();
+    ObservableList<valoresTabla> datos6 = FXCollections.observableArrayList();
+    ObservableList<valoresTabla> datos7 = FXCollections.observableArrayList();
+
     valoresTabla v1 = new valoresTabla();  valoresTabla v2 = new valoresTabla();
 
 
@@ -295,38 +308,44 @@ public class Reporte implements Initializable {
     }
 
     public void porCobrar(){
-        idPorCobrar.setCellValueFactory(new PropertyValueFactory<valoresTabla, String>("descripcion"));
+        idPorCobrar.setCellValueFactory(new PropertyValueFactory<valoresTabla, String>("subCategoria"));
         semana1PC.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana1"));
         semana2PC.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana2"));
         semana3PC.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana3"));
         semana4PC.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana4"));
+        semana5C.setCellValueFactory(new PropertyValueFactory<valoresTabla,Double>("semana5"));
         finalPC.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("total"));
-        ReporteDAO dao = new ReporteDAO();
-        porCobrar.setItems(dao.cuentasCobrar());
+        GestionDAO dao = new GestionDAO();
+        datos5 = dao.getCpC(mes.getValue());
+        porCobrar.setItems(datos5);
     }
 
     public void porPagar(){
 
-        idPorPagar.setCellValueFactory(new PropertyValueFactory<valoresTabla, String >("descripcion"));
+        idPorPagar.setCellValueFactory(new PropertyValueFactory<valoresTabla, String >("subCategoria"));
         semana1P.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana1"));
         semana2P.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana2"));
         semana3P.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana3"));
         semana4P.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana4"));
+        semana5P.setCellValueFactory(new PropertyValueFactory<valoresTabla,Double>("semana5"));
         finalPagar.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>(("total")));
-        ReporteDAO dao = new ReporteDAO();
-        porPagar.setItems(dao.cuentasPagar());
+        GestionDAO dao = new GestionDAO();
+        datos6 = dao.getCpP(mes.getValue());
+        porPagar.setItems(datos6);
     }
 
     public void bancos(){
 
-        idBancos.setCellValueFactory(new PropertyValueFactory<valoresTabla, String>("descripcion"));
+        idBancos.setCellValueFactory(new PropertyValueFactory<valoresTabla, String>("subCategoria"));
         semana1B.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana1"));
         semana2B.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana2"));
         semana3B.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana3"));
         semana4B.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana4"));
+        semana5B.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana5"));
         finalBanco.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("total"));
-        ReporteDAO dao = new ReporteDAO();
-        bancos.setItems(dao.bancos());
+        GestionDAO dao = new GestionDAO();
+        datos7 = dao.getBan(mes.getValue());
+        bancos.setItems(datos7);
     }
 
     @Override
