@@ -18,46 +18,21 @@ public class ReporteDAO {
     }
 
 
-    public ObservableList<Reporte> cuentasCobrar(){
-        ObservableList<Reporte> datos = FXCollections.observableArrayList();
+    public ObservableList<valoresTabla> cuentasCobrar(){
+        ObservableList<valoresTabla> datos = FXCollections.observableArrayList();
 
         return datos;
     }
 
-    public ObservableList<Reporte> cuentasPagar(){
-        ObservableList<Reporte> datos = FXCollections.observableArrayList();
+    public ObservableList<valoresTabla> cuentasPagar(){
+        ObservableList<valoresTabla> datos = FXCollections.observableArrayList();
 
         return datos;
     }
 
-    public ObservableList<Reporte> ingreso(){
-        ObservableList<Reporte> datos = FXCollections.observableArrayList();
 
-        if (connection != null){
-
-            String sql = "";
-
-            try {
-                PreparedStatement statement = connection.prepareStatement(sql);
-                ResultSet results = statement.executeQuery();
-
-                while (results.next()){
-                    String descripcion = results.getNString(1);
-                    int semana1 = results.getInt(2);
-                }
-
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
-        }
-
-        return datos;
-    }
-
-    public ObservableList<Reporte> gastos(){
-        ObservableList<Reporte> datos = FXCollections.observableArrayList();
+    public ObservableList<valoresTabla> bancos(){
+        ObservableList<valoresTabla> datos = FXCollections.observableArrayList();
 
         return datos;
     }

@@ -13,7 +13,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class Reporte implements Initializable {
@@ -22,46 +21,46 @@ public class Reporte implements Initializable {
     private ComboBox<String> mes;
 
     @FXML
-    private TableView<?> porCobrar;
+    private TableView<valoresTabla> porCobrar;
 
     @FXML
-    private TableColumn<?, ?> idPorCobrar;
+    private TableColumn<valoresTabla, String> idPorCobrar;
 
     @FXML
-    private TableColumn<?, ?> semana1PC;
+    private TableColumn<valoresTabla, Double> semana1PC;
 
     @FXML
-    private TableColumn<?, ?> semana2PC;
+    private TableColumn<valoresTabla, Double> semana2PC;
 
     @FXML
-    private TableColumn<?, ?> semana3PC;
+    private TableColumn<valoresTabla, Double> semana3PC;
 
     @FXML
-    private TableColumn<?, ?> semana4PC;
+    private TableColumn<valoresTabla, Double> semana4PC;
 
     @FXML
-    private TableColumn<?, ?> finalPC;
+    private TableColumn<valoresTabla, Double> finalPC;
 
     @FXML
-    private TableView<?> porPagar;
+    private TableView<valoresTabla> porPagar;
 
     @FXML
-    private TableColumn<?, ?> idPorPagar;
+    private TableColumn<valoresTabla, String> idPorPagar;
 
     @FXML
-    private TableColumn<?, ?> semana1P;
+    private TableColumn<valoresTabla, Double> semana1P;
 
     @FXML
-    private TableColumn<?, ?> semana2P;
+    private TableColumn<valoresTabla, Double> semana2P;
 
     @FXML
-    private TableColumn<?, ?> semana3P;
+    private TableColumn<valoresTabla, Double> semana3P;
 
     @FXML
-    private TableColumn<?, ?> semana4P;
+    private TableColumn<valoresTabla, Double> semana4P;
 
     @FXML
-    private TableColumn<?, ?> finalPagar;
+    private TableColumn<valoresTabla, Double> finalPagar;
 
     @FXML
     private TableView<valoresTabla> ingresos;
@@ -113,25 +112,25 @@ public class Reporte implements Initializable {
     private TableColumn<valoresTabla, Double> finalGastos;
 
     @FXML
-    private TableView<?> bancos;
+    private TableView<valoresTabla> bancos;
 
     @FXML
-    private TableColumn<?, ?> idBancos;
+    private TableColumn<valoresTabla, String> idBancos;
 
     @FXML
-    private TableColumn<?, ?> semana1B;
+    private TableColumn<valoresTabla, Double> semana1B;
 
     @FXML
-    private TableColumn<?, ?> semana2B;
+    private TableColumn<valoresTabla, Double> semana2B;
 
     @FXML
-    private TableColumn<?, ?> semana3B;
+    private TableColumn<valoresTabla, Double> semana3B;
 
     @FXML
-    private TableColumn<?, ?> semana4B;
+    private TableColumn<valoresTabla, Double> semana4B;
 
     @FXML
-    private TableColumn<?, ?> finalBanco;
+    private TableColumn<valoresTabla, Double> finalBanco;
 
     @FXML
     private TableView<valoresTabla> TableViewDiferencia;
@@ -203,9 +202,12 @@ public class Reporte implements Initializable {
 
     @FXML
     void mostrarReporte(MouseEvent event) {
-llenarEntradas();
-llenarSalidas();
-calcularDiferencia();
+        llenarEntradas();
+        llenarSalidas();
+        calcularDiferencia();
+        porCobrar();
+        porPagar();
+        bancos();
     }
 
 
@@ -291,6 +293,42 @@ calcularDiferencia();
         TableViewMargen.setItems(datos4);
 
     }
+
+    public void porCobrar(){
+        idPorCobrar.setCellValueFactory(new PropertyValueFactory<valoresTabla, String>("descripcion"));
+        semana1PC.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana1"));
+        semana2PC.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana2"));
+        semana3PC.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana3"));
+        semana4PC.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana4"));
+        finalPC.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("total"));
+        ReporteDAO dao = new ReporteDAO();
+        porCobrar.setItems(dao.cuentasCobrar());
+    }
+
+    public void porPagar(){
+
+        idPorPagar.setCellValueFactory(new PropertyValueFactory<valoresTabla, String >("descripcion"));
+        semana1P.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana1"));
+        semana2P.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana2"));
+        semana3P.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana3"));
+        semana4P.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana4"));
+        finalPagar.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>(("total")));
+        ReporteDAO dao = new ReporteDAO();
+        porPagar.setItems(dao.cuentasPagar());
+    }
+
+    public void bancos(){
+
+        idBancos.setCellValueFactory(new PropertyValueFactory<valoresTabla, String>("descripcion"));
+        semana1B.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana1"));
+        semana2B.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana2"));
+        semana3B.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana3"));
+        semana4B.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana4"));
+        finalBanco.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("total"));
+        ReporteDAO dao = new ReporteDAO();
+        bancos.setItems(dao.bancos());
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
        mes.setItems(combox);

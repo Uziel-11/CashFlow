@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="mysql-connector-java-8.0.23">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../1.-DatosJavaFx/mysql-connector-java-8.0.23/mysql-connector-java-8.0.23.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../1.-DatosJavaFx/javafx-sdk-16/lib" />
+      <root url="file://$PROJECT_DIR$/../../1.-DatosJavaFx/jasperReportsLibrary" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../1.-DatosJavaFx/javafx-sdk-16/lib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../1.-DatosJavaFx/jasperReportsLibrary" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../1.-DatosJavaFx/javafx-sdk-16/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../1.-DatosJavaFx/javafx-sdk-16/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>
