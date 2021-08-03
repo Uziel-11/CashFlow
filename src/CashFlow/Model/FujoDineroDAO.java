@@ -123,25 +123,26 @@ public class FujoDineroDAO {
         return a;
     }
 
-    public ObservableList<valores> getIngresosG(String tipo, String mes1, int semana) {
-        ObservableList<valores> flujo = FXCollections.observableArrayList();
+    public ObservableList<valoresTabla> getIngresosG(String mes1) {
+        ObservableList<valoresTabla> flujo = FXCollections.observableArrayList();
 
         if (connection != null) {
-            String sql = "select categoria,  sum(cantidad ) as cantidad  from flujodinero where  tipoFlujo = ? and mes= ? and numSemana = ?\n" +
-                    "group by categoria;";
+            String sql = "SELECT subCategoria, sum(semana1),sum(semana2), sum(semana3), sum(semana4), sum(semana5) from flujodinero join categoria on flujodinero.categoria = categoria.nombre and tipoFlujo = 'entrada'  and flujodinero.mes = ?\n" +
+                    "group by subCategoria";
 
             try {
                 PreparedStatement statement = connection.prepareStatement(sql);
-                statement.setString(1,tipo);
-                statement.setString(2,mes1);
-                statement.setInt(3,semana);
+                statement.setString(1,mes1);
                 ResultSet results = statement.executeQuery();
                 while (results.next()) {
-                    String categoria = results.getString(1);
-                    Double cantidad = results.getDouble(2);
+                    String subCategoria = results.getString(1);
+                    Double semana1 = results.getDouble(2);
+                    Double semana2 = results.getDouble(3);
+                    Double semana3 = results.getDouble(4);
+                    Double semana4 = results.getDouble(5);
+                    Double semana5 = results.getDouble(6);
 
-
-                    valores data = new valores(categoria, cantidad);
+                    valoresTabla data = new valoresTabla(subCategoria, semana1,semana2,semana3,semana4,semana5);
                     flujo.add(data);
                 }
             } catch (SQLException e) {

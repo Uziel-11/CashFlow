@@ -64,43 +64,43 @@ public class Reporte implements Initializable {
     private TableColumn<?, ?> finalPagar;
 
     @FXML
-    private TableView<ingresosGastos> ingresos;
+    private TableView<valoresTabla> ingresos;
 
     @FXML
-    private TableColumn<ingresosGastos, String> idIngreso;
+    private TableColumn<valoresTabla, String> idIngreso;
 
     @FXML
-    private TableColumn<ingresosGastos, Double> semana1I;
+    private TableColumn<valoresTabla, Double> semana1I;
 
     @FXML
-    private TableColumn<ingresosGastos, Double> semana2I;
+    private TableColumn<valoresTabla, Double> semana2I;
 
     @FXML
-    private TableColumn<ingresosGastos, Double> semana3I;
+    private TableColumn<valoresTabla, Double> semana3I;
 
     @FXML
-    private TableColumn<ingresosGastos, Double> semana4I;
+    private TableColumn<valoresTabla, Double> semana4I;
 
     @FXML
     private TableColumn<?, ?> finalIngreso;
 
     @FXML
-    private TableView<ingresosGastos> gastos;
+    private TableView<valoresTabla> gastos;
 
     @FXML
-    private TableColumn<ingresosGastos, String> idGastos;
+    private TableColumn<valoresTabla, String> idGastos;
 
     @FXML
-    private TableColumn<ingresosGastos, Double> semana1G;
+    private TableColumn<valoresTabla, Double> semana1G;
 
     @FXML
-    private TableColumn<ingresosGastos, Double> semana2G;
+    private TableColumn<valoresTabla, Double> semana2G;
 
     @FXML
-    private TableColumn<ingresosGastos, Double> semana3G;
+    private TableColumn<valoresTabla, Double> semana3G;
 
     @FXML
-    private TableColumn<ingresosGastos, Double> semana4G;
+    private TableColumn<valoresTabla, Double> semana4G;
 
     @FXML
     private TableColumn<?, ?> finalGastos;
@@ -146,8 +146,8 @@ public class Reporte implements Initializable {
 
     @FXML
     private TableColumn<?, ?> finalDirerencia;
-    ObservableList<valores> datos = FXCollections.observableArrayList();
-    ObservableList<valores> datos2 = FXCollections.observableArrayList();
+    ObservableList<valoresTabla> datos = FXCollections.observableArrayList();
+    ObservableList<valoresTabla> datos2 = FXCollections.observableArrayList();
 
     ObservableList<String> combox = FXCollections.observableArrayList(
             "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
@@ -169,18 +169,14 @@ public class Reporte implements Initializable {
     public void llenarEntradas() {
         String valor1 = mes.getValue();
 
-        /*idIngreso.setCellValueFactory(new PropertyValueFactory<ingresosGastos, String>("categoria"));
-        semana1I.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("valor"));
-        semana2I.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("semana2"));
-        semana3I.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("semana3"));
-        semana4I.setCellValueFactory(new PropertyValueFactory<ingresosGastos, Double>("semana4"));
+        idIngreso.setCellValueFactory(new PropertyValueFactory<valoresTabla, String>("subCategoria"));
+        semana1I.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana1"));
+        semana2I.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana2"));
+        semana3I.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana3"));
+        semana4I.setCellValueFactory(new PropertyValueFactory<valoresTabla, Double>("semana4"));
         FujoDineroDAO dao = new FujoDineroDAO();
 
-
-        datos = dao.getIngresosG("entrada", valor1, 1);
-
-        datos = dao.getIngresosG("entrada", valor1, 2);
-        ingresos.setItems(datos);*/
+        ingresos.setItems(datos);
 
 
     }
